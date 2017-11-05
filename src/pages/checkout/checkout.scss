@@ -1,0 +1,158 @@
+page-checkout {
+
+
+  ::-webkit-input-placeholder {
+    color: #white !important;
+  }
+  .list .item-block .item-inner {
+    border-color: rgba(256,256,256,.05);
+  }
+  .text-input {
+    color: $white !important;
+  }
+  .date-label{
+    color: $white !important;
+  }
+
+  .no-padd {
+    padding: 0px
+  }
+
+  .item {
+    color: $white;
+    background-color: $light-grey;
+  }
+  .checkOut .card-btn, page-checkout .checkOut .checkOut-btn :hover {
+    background-color: $white;
+    color: #white;
+    border: 1px solid $light-grey;
+    margin: 0.4rem 0rem;
+  }
+  .payment-block {
+    margin-bottom: 0px
+  }
+  .checkOut {
+    
+    background-size: cover;
+    .address-header {
+      font-size: 20px;
+      color: $white;
+      text-align: center;
+      color: $white;
+      margin-bottom: 1.5rem;
+    }
+    .payment-header {
+      @extend .address-header;
+    }
+    .add-heading {
+      padding: 1.3rem;
+      margin: 0;
+      background-color: $light-grey;
+      color: $white;
+    }
+    .sub-address {
+      background-color: $real_white;
+      color: $white;
+      border: 1px solid $light-grey;
+      padding-left: 0 !important;
+      text-indent: 7px;
+
+    }
+
+    .col-cod {
+      padding-left: 0 !important;
+    }
+    .cod-btn {
+      width: 100%;
+      border-radius: 0;
+      background-color: $white;
+      color: black;
+      height: 5.2rem;
+      border: 1px solid $light-grey;
+    }
+    .col-cart {
+      padding-right: 0 !important;
+    }
+    .card-btn {
+      @extend .cod-btn;
+      background-color: $primary;
+      color: $white;
+      border:0;
+      .check {
+        font-size: 1.6rem;
+      }
+    }
+
+    .checkOut-btn {
+      @extend .card-btn;
+      margin-top: 2em;
+      height: 4.9rem;
+      color:$real_white;
+    }
+
+    .card-list {
+      .card-detail {
+        background: transparent;
+        padding: 0px;
+        padding: 0px;
+        .item-inner {
+          padding-right: 0px;
+          .label {
+            margin: 0px;
+            .card-item {
+              background-color: $real_white;
+              color: $white;
+              border: 1px solid $light-grey;
+              padding-left: 0 !important;
+              text-indent: 7px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .list {
+    width: 100%;
+  }
+  .cvv{
+    border-top: 0px !important;
+    border-bottom: 0px!important;
+    border-right: 0px!important;
+  }
+  .date{
+    border-top: 0px!important;
+    border-bottom: 0px!important;
+  }
+  .date-icon{
+    position: absolute;
+    top: 60px;
+    left: 138px;
+    color:$light-grey;
+    z-index: -111;
+  }
+
+  .select {
+    padding: 13px 8px 13px 8px;
+  }
+
+  .label {
+    margin: 13px 8px 13px 8px;
+  }
+
+  .preorder-message {
+    margin-bottom: 16px;
+  }
+
+  .select-address {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .expiry-date {
+    padding: 13px 8px 13px 8px;
+  }
+
+  .comments textarea {
+    margin: 13px 14px;
+  }
+}

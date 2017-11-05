@@ -1,0 +1,71 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "com.paypal.cordova.mobilesdk": {
+      "PACKAGE_NAME": "com.crepeguys.app"
+    },
+    "cordova-plugin-crosswalk-webview": {
+      "PACKAGE_NAME": "com.crepeguys.app"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.crepeguys.app"
+    },
+    "cordova-plugin-email": {
+      "PACKAGE_NAME": "com.crepeguys.app"
+    },
+    "cordova-plugin-facebook4": {
+      "APP_ID": "1886232221665206",
+      "APP_NAME": "ionic3firebaseApp",
+      "PACKAGE_NAME": "com.crepeguys.app"
+    },
+    "cordova-plugin-firebase": {
+      "PACKAGE_NAME": "com.crepeguys.app"
+    },
+    "cordova-plugin-googleplus": {
+      "REVERSED_CLIENT_ID": "RestaurentV3",
+      "PACKAGE_NAME": "com.crepeguys.app"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.crepeguys.app"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.crepeguys.app"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.crepeguys.app"
+    },
+    "cordova-plugin-stripe": {
+      "PACKAGE_NAME": "com.crepeguys.app"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.crepeguys.app"
+    },
+    "cordova-plugin-x-socialsharing": {
+      "PACKAGE_NAME": "com.crepeguys.app"
+    },
+    "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "com.crepeguys.app"
+    },
+    "onesignal-cordova-plugin": {
+      "PACKAGE_NAME": "com.crepeguys.app"
+    },
+    "twitter-connect-plugin": {
+      "FABRIC_KEY": "c85e4cff3836038742faae187f364ea33d94cbed",
+      "PACKAGE_NAME": "com.crepeguys.app"
+    }
+  },
+  "dependent_plugins": {
+    "card.io.cordova.mobilesdk": {
+      "PACKAGE_NAME": "com.crepeguys.app"
+    },
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "com.crepeguys.app"
+    }
+  }
+}

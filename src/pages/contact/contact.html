@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{"Contact" | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="contact">
+  <p class="contact-head">{{"Contact Us" | translate}}</p>
+  <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
+    <!--name-->
+    <ion-row>
+      <ion-col col-12>
+        <ion-item>
+          <ion-label>{{"Name:" | translate}}</ion-label>
+          <ion-input type="text" formControlName="name" required></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <!--email-->
+    <ion-row>
+      <ion-col col-12>
+        <ion-item>
+          <ion-label>{{"Email:" | translate}}</ion-label>
+          <ion-input type="email" formControlName="email" required></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <!--message-->
+    <ion-row>
+      <ion-col  col-12>
+        <ion-item>
+          <ion-label>{{"Message:" | translate}}</ion-label>
+          <ion-textarea rows="6" lineHeight="42" formControlName="message" required></ion-textarea>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <!--button-->
+    <ion-row>
+      <ion-col col-12>
+        <button class="submit-btn" ion-button type='submit' [disabled]="!contactForm.valid"> {{"Send" | translate}}</button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

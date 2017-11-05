@@ -1,0 +1,112 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title class="title">{{"Payment Options" |translate}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="checkOut">
+  <form (ngSubmit)="onCheckOut(f)" #f="ngForm">
+    <ion-row>
+      <ion-col col-12 class="address-header">
+        <ion-icon ios="ios-home" md="md-home"></ion-icon>
+        &nbsp;&nbsp;{{"Address" | translate}}
+      </ion-col>
+    </ion-row><!-- row for address -->
+    <ion-list class="adress-line">
+      <form>
+        <ion-label class="add-heading">
+          <ion-icon ios="ios-home" md="md-home"></ion-icon>
+          &nbsp;&nbsp;{{"ENTER ADDRESS" | translate}}
+        </ion-label>
+        <div>
+          <ion-item class="sub-address">
+            <ion-select [(ngModel)]="address.address" name="address" placeholder="Select address" class="select-address">
+              <ion-option text-wrap *ngFor="let delivery_address of delivery_addresses | async" [value]="delivery_address.street">
+                <div>{{delivery_address.place}}</div>
+                <div>{{delivery_address.street}}</div>
+              </ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item class="sub-address">
+            <ion-input type="text" placeholder="Apartment, suite, unit" name="apartment" id="apartment"
+              [(ngModel)]="address.apartment"></ion-input>
+          </ion-item>
+
+          <ion-item class="sub-address">
+            <ion-label class="label">Delivery date</ion-label>
+            <ion-datetime displayFormat="MMM DD" [(ngModel)]="address.delivery_day" name="delivery_day"></ion-datetime>
+          </ion-item>
+
+          <ion-item class="sub-address">
+            <ion-label class="label">Delivery time</ion-label>
+            <ion-datetime displayFormat="HH:mm" hourValues="8,9,10,11" max="11:30" [(ngModel)]="address.delivery_time" name="delivery_time"></ion-datetime>
+          </ion-item>
+
+          <ion-item class="sub-address">
+            <ion-textarea placeholder="Comments" name="comments" class="comments" [(ngModel)]="address.comments"></ion-textarea>
+          </ion-item>
+        </div>
+      </form>
+    </ion-list>
+    <div text-center class="preorder-message">
+      <ion-icon name="information-circle"></ion-icon> {{checkoutInfo}}
+    </div>
+    <ion-row>
+      <ion-col  col-12 class="payment-header">
+        <ion-icon ios="ios-pricetags" md="md-pricetags"></ion-icon>
+        &nbsp;&nbsp;{{"Payment"| translate}}
+      </ion-col>
+    </ion-row>
+    
+    <!-- Select payment method -->
+    <ion-list radio-group [(ngModel)]="paymentMethod" name="paymentMethod">
+      <ion-item>
+        <ion-label>Paypal</ion-label>
+        <ion-radio value="paypal" checked="true"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Credit Card</ion-label>
+        <ion-radio value="stripe"></ion-radio>
+      </ion-item>
+    </ion-list>
+    
+    <!-- Stripe Card data -->
+    <ion-row *ngIf="paymentMethod == 'stripe'">
+      <ion-list class="card-list">
+        <ion-item class="card-detail">
+          <form>
+            <ion-row>
+              <ion-col class="no-padd">
+                <ion-item class="card-item">
+                  <ion-input type="number" placeholder="Card number" [(ngModel)]="cardDetails.cardNumber" name="cardNumber"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row style="border-bottom: 1px solid #ccc;">
+              <ion-col width-67 class="no-padd">
+                <ion-item class="card-item date">
+                  <ion-datetime class="expiry-date" min="2017" max="2030-10-20" placeholder="MM/YY" displayFormat="MM/YY" name="expiryDate" [(ngModel)]="cardDetails.expiryDate"></ion-datetime>
+                </ion-item>
+              </ion-col>
+              <ion-col width-33 class="no-padd">
+                <ion-item class="card-item cvv">
+                  <ion-input type="number" placeholder="CVV" [(ngModel)]="cardDetails.cvv" name="cvv"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </form>
+        </ion-item>
+      </ion-list>
+    </ion-row>
+
+    <!-- Checkout and Pay -->
+    <button [disabled]="disabledCheckout" full ion-button (click)="checkoutAndPay()">Checkout and Pay</button>
+
+    <!--<button class="checkOut-btn" ion-button block type="submit" [disabled]="!f.valid">
+      <ion-icon ios="ios-cart" md="md-cart"></ion-icon>
+      &nbsp;&nbsp;{{"Check Out" | translate}}
+    </button>-->
+  </form>
+</ion-content>

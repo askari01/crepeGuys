@@ -1,0 +1,18 @@
+{
+    "android": {
+        "debug": {
+            "keystore": "./keystore/lcf.keystore",
+            "storePassword": "H@#Kj$rtNFPA8Jmj",
+            "alias": "lcf",
+            "password" : "H@#Kj$rtNFPA8Jmj",
+            "keystoreType": ""
+        },
+        "release": {
+            "keystore": "./keystore/lcf.keystore",
+            "storePassword": "H@#Kj$rtNFPA8Jmj",
+            "alias": "lcf",
+            "password" : "H@#Kj$rtNFPA8Jmj",
+            "keystoreType": ""
+        }
+    }
+}
